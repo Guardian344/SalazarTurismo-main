@@ -240,6 +240,11 @@
       line-height: 1.6;
     }
 
+    #debug-video {
+      margin-top: 4px;
+      opacity: .8;
+    }
+
     @keyframes pulso {
       0%, 100% { transform: scale(.98); opacity: .6; }
       50%      { transform: scale(1.02); opacity: 1; }
@@ -292,7 +297,10 @@
 
   <div id="aviso"></div>
   <div id="subtitulo"></div>
-  <div id="debug"></div>
+  <div id="debug">
+    <div id="debug-log"></div>
+    <div id="debug-video"></div>
+  </div>
 
   <div id="controles">
     <button id="btn-audio" class="btn-control secundario" title="Silenciar narración">
@@ -317,7 +325,7 @@
        look-controls desactivado: en MindAR la cámara debe quedar fija en el
        origen, si rota el modelo se despega del target. -->
   <a-scene
-    mindar-image="imageTargetSrc: Recursos/targetsar/targets.mind;
+    mindar-image="imageTargetSrc: Recursos/TargetsAR/targets.mind;
                   autoStart: false;
                   uiScanning: no;
                   uiLoading: no;
@@ -332,7 +340,7 @@
     device-orientation-permission-ui="enabled: false">
 
     <a-assets timeout="120000">
-      <a-asset-item id="modeloPlaza" src="Recursos/animaciones/plazacentral.glb"></a-asset-item>
+      <a-asset-item id="modeloPlaza" src="Recursos/Animaciones/PlazaCentral.glb"></a-asset-item>
       <!-- Cuando tengas los otros modelos, añádelos aquí:
       <a-asset-item id="modeloPatinaje" src="Recursos/animaciones/patinaje.glb"></a-asset-item>
       -->
@@ -407,7 +415,9 @@
     const iconoAudio  = document.getElementById('icono-audio');
     const subtitulo   = document.getElementById('subtitulo');
     const aviso       = document.getElementById('aviso');
-    const panelDebug  = document.getElementById('debug');
+    const panelDebug    = document.getElementById('debug');
+    const panelDebugLog = document.getElementById('debug-log');
+    const panelDebugVideo = document.getElementById('debug-video');
 
     const DEBUG = new URLSearchParams(location.search).has('debug');
     if (DEBUG) panelDebug.style.display = 'block';
@@ -425,8 +435,29 @@
 
     function log(texto) {
       if (!DEBUG) return;
-      panelDebug.textContent = texto;
+      panelDebugLog.textContent = texto;
     }
+
+    /* Resolución real del <video> que MindAR inserta en el DOM al arrancar
+       la cámara, más el label del track. Se re-consulta cada segundo porque
+       videoWidth/videoHeight pueden quedar en 0 hasta que el feed se
+       estabiliza, y el navegador a veces ajusta la resolución después. */
+    function actualizarInfoVideo() {
+      const video = document.querySelector('video');
+      if (!video) {
+        panelDebugVideo.textContent = 'Video: (esperando cámara…)';
+        return;
+      }
+      const track = video.srcObject && video.srcObject.getVideoTracks
+        ? video.srcObject.getVideoTracks()[0]
+        : null;
+      const resolucion = (video.videoWidth && video.videoHeight)
+        ? `${video.videoWidth}×${video.videoHeight}`
+        : '(sin datos aún)';
+      const label = track ? track.label || '(sin nombre)' : '(sin track)';
+      panelDebugVideo.textContent = `Video: ${resolucion} · Cámara: ${label}`;
+    }
+    if (DEBUG) setInterval(actualizarInfoVideo, 1000);
 
     /* ============================================================
        COMPONENTE: experiencia-ar
@@ -656,7 +687,7 @@
       btnIniciar.style.display = 'none';
       document.querySelector('#inicio h2').textContent = 'No se pudo iniciar el escáner';
       document.querySelector('#inicio p').textContent =
-        'Comprueba tres cosas: que la página esté servida por HTTPS, que el navegador tenga permiso de cámara, y que exista el archivo Recursos/targetsar/targets.mind.';
+        'Comprueba tres cosas: que la página esté servida por HTTPS, que el navegador tenga permiso de cámara, y que exista el archivo Recursos/TargetsAR/targets.mind.';
       cargaTexto.textContent = '';
     });
 
