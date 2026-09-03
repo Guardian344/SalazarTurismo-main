@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salazar de las Palmas - Secretaría de Turismo</title>
+    <meta name="description"
+        content="Descubre Salazar de las Palmas, la cuna del café en Colombia. Naturaleza, historia, arquitectura colonial y una cultura inolvidable en Norte de Santander.">
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logos">
+                <img src="Recursos/Logo Gobernación.png" alt="Logo Gobernación" class="logo">
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#historia" class="nav-link">Historia</a>
+                <a href="#turismo" class="nav-link">Turismo</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <button id="openArBtn" class="btn btn-primary btn-ar"><i class="fa-solid fa-camera"></i> Escanear
+                    AR</button>
+                <a href="#contacto" class="btn btn-primary">Visítanos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-in-up">
+            <span class="badge">Norte de Santander, Colombia</span>
+            <h1 class="hero-title">Descubre la Magia de<br>Salazar de las Palmas</h1>
+            <p class="hero-subtitle">Cuna del café en Colombia. Sumérgete en nuestra historia colonial, maravillas
+                naturales y vibrante cultura.</p>
+            <div class="hero-buttons">
+                <a href="#turismo" class="btn btn-primary btn-large">Explorar Destinos</a>
+                <a href="#historia" class="btn btn-outline btn-large">Nuestra Historia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE SALAZAR (HISTORIA Y CULTURA) -->
+    <section id="historia" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text fade-in-up">
+                    <h2 class="section-title">Nuestra Historia y Cultura</h2>
+                    <div class="title-underline"></div>
+                    <p>Fundada en 1583, Salazar de las Palmas es una joya colonial en el corazón de Norte de Santander.
+                        Conocida históricamente como la cuna del café en Colombia, nuestras tierras vieron nacer las
+                        primeras exportaciones del grano que hoy identifica a nuestro país ante el mundo.</p>
+                    <p>Nuestro municipio combina la riqueza de la arquitectura colonial con exuberantes paisajes
+                        montañosos, ríos cristalinos y una calidez humana incomparable. Ven y vive la verdadera esencia
+                        del turismo cultural y ecológico.</p>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <i class="fa-solid fa-church stat-icon"></i>
+                            <span class="stat-number">1583</span>
+                            <span class="stat-label">Año de Fundación</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fa-solid fa-leaf stat-icon"></i>
+                            <span class="stat-number">Cuna</span>
+                            <span class="stat-label">Del Café en Colombia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image-wrapper fade-in-up">
+                    <img src="Recursos/colonial_architecture.png" alt="Arquitectura colonial de Salazar"
+                        class="about-image">
+                    <div class="image-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LUGARES TURÍSTICOS -->
+    <section id="turismo" class="section tourism-section bg-light">
+        <div class="container">
+            <div class="section-header text-center fade-in-up">
+                <!-- Etiqueta removida según solicitud -->
+                <h2 class="section-title">Lugares Turísticos</h2>
+                <div class="title-underline center"></div>
+                <p class="section-description">Explora los rincones más hermosos de nuestro municipio. Desde majestuosas
+                    cascadas hasta el corazón de nuestra cultura cafetera.</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Tarjeta 1 -->
+                <div class="tour-card fade-in-up">
+                    <div class="card-image">
+                        <img src="Recursos/waterfall_salazar.png" alt="Cascadas Naturales">
+                        <div class="card-category">Ecoturismo</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Naturaleza</h3>
+                        <p class="card-text">Descubre uno de los lugares más emblemáticos de Salazar de las Palmas,
+                            donde la naturaleza y la tradición religiosa se unen en un entorno lleno de paisajes y
+                            tranquilidad.</p>
+                        <a href="naturaleza.html" class="btn btn-secondary btn-sm">Ver más <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="tour-card fade-in-up delay-1">
+                    <div class="card-image">
+                        <img src="Recursos/coffee_culture.png" alt="Ruta del Café">
+                        <div class="card-category">Aventura</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Senderismo y Patinaje</h3>
+                        <p class="card-text">Disfruta experiencias al aire libre, recorridos ecológicos y espacios
+                            recreativos modernos diseñados para el deporte y la integración familiar.</p>
+                        <a href="aventura.html" class="btn btn-secondary btn-sm">Ver más <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="tour-card fade-in-up delay-2">
+                    <div class="card-image">
+                        <img src="Recursos/colonial_architecture.png" alt="Centro Histórico">
+                        <div class="card-category">Cultura</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cultura e Historia</h3>
+                        <p class="card-text">Recorre el corazón histórico del municipio y conoce espacios que conservan
+                            la arquitectura, cultura y tradición de Salazar de las Palmas.</p>
+                        <a href="cultura.html" class="btn btn-secondary btn-sm">Ver más <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA VISUAL -->
+    <section id="galeria" class="section gallery-section">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">Galería Visual</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in-up"
+                    data-images='["Recursos/Galeria Visual/Panoramica/Panoramica 1.jpg", "Recursos/Galeria Visual/Panoramica/Panoramica 2.jpg", "Recursos/Galeria Visual/Panoramica/Panoramica 3.jpg", "Recursos/Galeria Visual/Panoramica/Panoramica 4.jpg", "Recursos/Galeria Visual/Panoramica/Panoramica 5.webp"]'>
+                    <img src="Recursos/Galeria Visual/Panoramica/Panoramica 1.jpg" alt="Panorámica Salazar">
+                    <div class="gallery-overlay">
+                        <span>Panorámica</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up delay-1"
+                    data-images='["Recursos/Galeria Visual/Naturaleza/Naturaleza 1.JPG", "Recursos/Galeria Visual/Naturaleza/Naturaleza 2.webp", "Recursos/Galeria Visual/Naturaleza/Naturaleza 3.jpg", "Recursos/Galeria Visual/Naturaleza/Naturaleza 4.jpg", "Recursos/Galeria Visual/Naturaleza/Naturaleza 5.jpg"]'>
+                    <img src="Recursos/Galeria Visual/Naturaleza/Naturaleza 1.JPG" alt="Naturaleza">
+                    <div class="gallery-overlay">
+                        <span>Naturaleza</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up delay-2"
+                    data-images='["Recursos/Galeria Visual/Cafe/Cafe 1.jpg", "Recursos/Galeria Visual/Cafe/Cafe 2.jpg", "Recursos/Galeria Visual/Cafe/Cafe 3.jpg", "Recursos/Galeria Visual/Cafe/Cafe 4.webp", "Recursos/Galeria Visual/Cafe/Cafe 5.webp"]'>
+                    <img src="Recursos/Galeria Visual/Cafe/Cafe 1.jpg" alt="Cultura Cafetera">
+                    <div class="gallery-overlay">
+                        <span>Cultura Cafetera</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up delay-1"
+                    data-images='["Recursos/Galeria Visual/Arquitectura/Arquitectura 1.jpg", "Recursos/Galeria Visual/Arquitectura/Arquitectura 2.jpg", "Recursos/Galeria Visual/Arquitectura/Arquitectura 3.jpg", "Recursos/Galeria Visual/Arquitectura/Arquitectura 4.JPG", "Recursos/Galeria Visual/Arquitectura/Arquitectura 5.jpg"]'>
+                    <img src="Recursos/Galeria Visual/Arquitectura/Arquitectura 1.jpg" alt="Arquitectura">
+                    <div class="gallery-overlay">
+                        <span>Arquitectura Colonial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <img src="Recursos/Logo Gobernación.png" alt="Gobernación" class="footer-logo">
+                    </div>
+                    <p class="footer-desc">Secretaría de Cultura y Turismo.<br>Gobernación de Norte de
+                        Santander.<br>Salazar de las Palmas.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-title">Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#historia">Nuestra Historia</a></li>
+                        <li><a href="#turismo">Lugares Turísticos</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="contact-info">
+                        <li><i class="fa-solid fa-location-dot"></i> Alcaldía Municipal, Salazar de las Palmas</li>
+                        <li><i class="fa-solid fa-envelope"></i> secturismo@nortedesantander.gov.co</li>
+                        <li><i class="fa-solid fa-phone"></i> +57 (607) 000 0000</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/GobernaciondeNortedeSantander/?locale=es_LA"
+                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/gobernorte/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@GobernacionNorteDeSantander" target="_blank"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-developers"
+                style="padding-bottom: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; margin-top: 1rem;">
+                <h4
+                    style="color: white; font-size: 1.25rem; margin-bottom: 2rem; text-align: center; position: relative;">
+                    Desarrolladores del Proyecto
+                    <span
+                        style="display: block; width: 40px; height: 2px; background-color: var(--color-accent); margin: 0.5rem auto 0;"></span>
+                </h4>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; align-items: center;">
+                    <div class="footer-logos"
+                        style="display: flex; flex-direction: column; align-items: center; margin-bottom: 0;">
+                        <img src="Recursos/Multimedia-Logo.png" alt="Ingeniería Multimedia" class="footer-logo"
+                            style="background-color: white; height: 80px; padding: 10px;">
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+                        <div
+                            style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; min-width: 260px;">
+                            <strong
+                                style="display: block; font-size: 1.05rem; color: white; margin-bottom: 0.5rem;">Jorge
+                                Andres Herrera Aguirre</strong>
+                            <ul style="margin: 0; padding: 0; list-style: none; color: rgba(255, 255, 255, 0.7);">
+                                <li
+                                    style="margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-envelope"
+                                        style="width: 20px; text-align: center; color: var(--color-accent); margin-right: 10px;"></i>
+                                    jorgeaherreraaguirre@gmail.com</li>
+                                <li
+                                    style="margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-phone"
+                                        style="width: 20px; text-align: center; color: var(--color-accent); margin-right: 10px;"></i>
+                                    3105792766</li>
+                                <li style="margin-bottom: 0; font-size: 0.9rem; display: flex; align-items: center;"><a
+                                        href="https://wa.me/573144682558" target="_blank"
+                                        style="color: inherit; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;"
+                                        onmouseover="this.style.color='#25D366'"
+                                        onmouseout="this.style.color='inherit'"><i class="fa-brands fa-whatsapp"
+                                            style="width: 20px; text-align: center; color: #25D366; margin-right: 10px;"></i>
+                                        3144682558</a></li>
+                            </ul>
+                        </div>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; min-width: 260px;">
+                            <strong
+                                style="display: block; font-size: 1.05rem; color: white; margin-bottom: 0.5rem;">Hector
+                                Andres Maldonado Contreras</strong>
+                            <ul style="margin: 0; padding: 0; list-style: none; color: rgba(255, 255, 255, 0.7);">
+                                <li
+                                    style="margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-envelope"
+                                        style="width: 20px; text-align: center; color: var(--color-accent); margin-right: 10px;"></i>
+                                    maldonadocontreras37@gmail.com</li>
+                                <li style="margin-bottom: 0; font-size: 0.9rem; display: flex; align-items: center;"><a
+                                        href="https://wa.me/573185795931" target="_blank"
+                                        style="color: inherit; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;"
+                                        onmouseover="this.style.color='#25D366'"
+                                        onmouseout="this.style.color='inherit'"><i class="fa-brands fa-whatsapp"
+                                            style="width: 20px; text-align: center; color: #25D366; margin-right: 10px;"></i>
+                                        3185795931</a></li>
+                            </ul>
+                        </div>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; min-width: 260px;">
+                            <strong
+                                style="display: block; font-size: 1.05rem; color: white; margin-bottom: 0.5rem;">Sergio
+                                Andres Gomez Lopez</strong>
+                            <ul style="margin: 0; padding: 0; list-style: none; color: rgba(255, 255, 255, 0.7);">
+                                <li
+                                    style="margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: center;">
+                                    <i class="fa-solid fa-envelope"
+                                        style="width: 20px; text-align: center; color: var(--color-accent); margin-right: 10px;"></i>
+                                    andresgl3012@gmail.com</li>
+                                <li style="margin-bottom: 0; font-size: 0.9rem; display: flex; align-items: center;"><a
+                                        href="https://wa.me/573143127569" target="_blank"
+                                        style="color: inherit; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;"
+                                        onmouseover="this.style.color='#25D366'"
+                                        onmouseout="this.style.color='inherit'"><i class="fa-brands fa-whatsapp"
+                                            style="width: 20px; text-align: center; color: #25D366; margin-right: 10px;"></i>
+                                        3143127569</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Secretaría de Turismo. Gobernación de Norte de Santander. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Container para Galería -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <div class="lightbox-images" id="lightboxImages">
+                <!-- Images will be injected here via JS -->
+            </div>
+            <button class="lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Modal para WebAR -->
+    <div id="arOverlay" class="ar-overlay">
+        <div class="ar-header">
+            <h3><i class="fa-solid fa-vr-cardboard"></i> Escáner de Realidad Aumentada</h3>
+            <button id="closeArBtn" class="ar-close-btn">&times;</button>
+        </div>
+        <div class="ar-body">
+            <!-- Iframe donde vivirá la experiencia de cámara para no romper estilos -->
+            <iframe id="arIframe" src="" allow="camera;gyroscope;accelerometer;magnetometer;xr-spatial-tracking"
+                frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

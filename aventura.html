@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura - Senderismo y Patinaje</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .hero-small {
+            height: 50vh;
+            min-height: 400px;
+            background-image: url('Recursos/Patinaje/PistaPatinajeSalazar.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .content-section { padding: var(--spacing-lg) 0; }
+        .text-block { margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <div class="logos">
+                <img src="Recursos/Logo Gobernación.png" alt="Logo Gobernación" class="logo">
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html#inicio" class="nav-link">Inicio</a>
+                <a href="index.html#turismo" class="nav-link">Turismo</a>
+                <button id="openArBtn" class="btn btn-primary btn-ar"><i class="fa-solid fa-camera"></i> Escanear AR</button>
+                <a href="index.html#contacto" class="btn btn-primary">Visítanos</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero-small">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-in-up">
+            <span class="badge">Deporte y Naturaleza</span>
+            <h1 class="hero-title" style="font-size: 3rem;">Senderismo y Patinaje<br>en Salazar</h1>
+        </div>
+    </section>
+
+    <section class="section content-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text fade-in-up">
+                    <div class="text-block">
+                        <h2 class="section-title" style="font-size: 2rem;">Senderismo y Ecoturismo de Altura</h2>
+                        <div class="title-underline"></div>
+                        <p>Salazar de las Palmas es un verdadero edén para los amantes del senderismo y el contacto puro con la naturaleza. Con una geografía montañosa escarpada y valles profundos, el municipio ofrece decenas de rutas secretas que atraviesan bosques nublados y fincas cafeteras tradicionales.</p>
+                        <p>Entre los recorridos más desafiantes y hermosos se encuentran las rutas hacia la <strong>Cascada El Ejido</strong>, un salto de agua imponente ideal para el torrentismo; el misterioso conjunto de cascadas de <strong>El Mandingas</strong> y <strong>Las Pailas</strong>, formaciones rocosas naturales que crean piscinas profundas de agua cristalina.</p>
+                        
+                        <h3 style="margin-top: 1.5rem; color: var(--color-primary-dark);">Datos Curiosos del Senderismo Local</h3>
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--color-text-muted);">
+                            <li>En las rutas de senderismo es común cruzarse con plantaciones de café bajo sombra, un sistema que preserva la biodiversidad de aves.</li>
+                            <li>La temperatura puede descender varios grados a medida que te adentras en el bosque hacia las cascadas más altas.</li>
+                            <li>Antiguamente, muchas de estas rutas eran los caminos de herradura que usaban los mulares para transportar el café hacia el Lago de Maracaibo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-block" style="margin-top: 3rem;">
+                        <h2 class="section-title" style="font-size: 2rem;">Patinaje: Cuna de Campeones</h2>
+                        <div class="title-underline"></div>
+                        <p>Si bien Salazar es conocido por su historia, su presente vibra con la velocidad del patinaje. El deporte sobre ruedas ha tomado una fuerza impresionante entre la juventud local, impulsado ferozmente por la escuela municipal <em>Salazar Skate</em>, que ha formado deportistas de talla departamental.</p>
+                        <p>Este crecimiento exponencial llevó a la reciente inauguración del <strong>Patinódromo y Parque Recreodeportivo Néstor Rojas</strong> en el sector La Belencita. Esta moderna infraestructura cuenta con una pista reglamentaria de asfalto sintético que no solo sirve para el entrenamiento de los talentos locales, sino que ha convertido a Salazar en una sede oficial de competencias regionales de alto rendimiento, dinamizando el turismo deportivo.</p>
+                    </div>
+                </div>
+                
+                <div class="about-image-wrapper fade-in-up delay-1">
+                    <img src="Recursos/Senderismo/CascadaSenderismo.jpg" alt="Senderismo en Salazar" class="about-image" style="margin-bottom: 1rem;">
+                    <img src="Recursos/Patinaje/PatinajeEquipoSalazar.jpg" alt="Equipo de Patinaje Salazar Skate" class="about-image">
+                    <div class="image-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-grid footer-grid-2col">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <img src="Recursos/Logo Gobernación.png" alt="Gobernación" class="footer-logo">
+                    </div>
+                    <p class="footer-desc">Secretaría de Cultura y Turismo.<br>Gobernación de Norte de Santander.<br>Salazar de las Palmas.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="contact-info">
+                        <li><i class="fa-solid fa-location-dot"></i> Alcaldía Municipal, Salazar de las Palmas</li>
+                        <li><i class="fa-solid fa-envelope"></i> secturismo@nortedesantander.gov.co</li>
+                        <li><i class="fa-solid fa-phone"></i> +57 (607) 000 0000</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/GobernaciondeNortedeSantander/?locale=es_LA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/gobernorte/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@GobernacionNorteDeSantander" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-developers" style="padding-bottom: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; margin-top: 1rem;">
+                <h4 style="color: white; font-size: 1.25rem; margin-bottom: 2rem; text-align: center; position: relative;">
+                    Desarrolladores del Proyecto
+                    <span style="display: block; width: 40px; height: 2px; background-color: var(--color-accent); margin: 0.5rem auto 0;"></span>
+                </h4>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; align-items: center;">
+                    <div class="footer-logos" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 0;">
+                        <img src="Recursos/Multimedia-Logo.png" alt="Ingeniería Multimedia" class="footer-logo" style="background-color: white; height: 80px; padding: 10px;">
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; min-width: 260px;">
+                            <strong style="display: block; font-size: 1.05rem; color: white; margin-bottom: 0.5rem;">Jorge Andres Herrera Aguirre</strong>
+                            <ul style="margin: 0; padding: 0; list-style: none; color: rgba(255, 255, 255, 0.7);">
+                                <li style="margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: center;"><i class="fa-solid fa-envelope" style="width: 20px; text-align: center; color: var(--color-accent); margin-right: 10px;"></i> jorgeaherreraaguirre@gmail.com</li>
+                                <li style="margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: center;"><i class="fa-solid fa-phone" style="width: 20px; text-align: center; color: var(--color-accent); margin-right: 10px;"></i> 3105792766</li>
+                                <li style="margin-bottom: 0; font-size: 0.9rem; display: flex; align-items: center;"><a href="https://wa.me/573144682558" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='inherit'"><i class="fa-brands fa-whatsapp" style="width: 20px; text-align: center; color: #25D366; margin-right: 10px;"></i> 3144682558</a></li>
+                            </ul>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; min-width: 260px;">
+                            <strong style="display: block; font-size: 1.05rem; color: white; margin-bottom: 0.5rem;">Hector Andres Maldonado Contreras</strong>
+                            <ul style="margin: 0; padding: 0; list-style: none; color: rgba(255, 255, 255, 0.7);">
+                                <li style="margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: center;"><i class="fa-solid fa-envelope" style="width: 20px; text-align: center; color: var(--color-accent); margin-right: 10px;"></i> maldonadocontreras37@gmail.com</li>
+                                <li style="margin-bottom: 0; font-size: 0.9rem; display: flex; align-items: center;"><a href="https://wa.me/573185795931" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='inherit'"><i class="fa-brands fa-whatsapp" style="width: 20px; text-align: center; color: #25D366; margin-right: 10px;"></i> 3185795931</a></li>
+                            </ul>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; min-width: 260px;">
+                            <strong style="display: block; font-size: 1.05rem; color: white; margin-bottom: 0.5rem;">Sergio Andres Gomez Lopez</strong>
+                            <ul style="margin: 0; padding: 0; list-style: none; color: rgba(255, 255, 255, 0.7);">
+                                <li style="margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: center;"><i class="fa-solid fa-envelope" style="width: 20px; text-align: center; color: var(--color-accent); margin-right: 10px;"></i> andresgl3012@gmail.com</li>
+                                <li style="margin-bottom: 0; font-size: 0.9rem; display: flex; align-items: center;"><a href="https://wa.me/573143127569" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='inherit'"><i class="fa-brands fa-whatsapp" style="width: 20px; text-align: center; color: #25D366; margin-right: 10px;"></i> 3143127569</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Secretaría de Turismo. Gobernación de Norte de Santander. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para WebAR -->
+    <div id="arOverlay" class="ar-overlay">
+        <div class="ar-header">
+            <h3><i class="fa-solid fa-vr-cardboard"></i> Escáner de Realidad Aumentada</h3>
+            <button id="closeArBtn" class="ar-close-btn">&times;</button>
+        </div>
+        <div class="ar-body">
+            <!-- Iframe donde vivirá la experiencia de cámara para no romper estilos -->
+            <iframe id="arIframe" src="" allow="camera;gyroscope;accelerometer;magnetometer;xr-spatial-tracking" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

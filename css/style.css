@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Variables y Configuración Global (Diseño Institucional)
+   ========================================================================== */
+:root {
+    /* Paleta de Colores - Gobernación de Norte de Santander */
+    --color-primary: #006b3f; /* Verde institucional */
+    --color-primary-dark: #004b2b;
+    --color-accent: #e5b920; /* Dorado / Amarillo institucional */
+    --color-accent-hover: #f5c72a;
+    
+    /* Colores neutrales */
+    --color-text-main: #333333;
+    --color-text-muted: #666666;
+    --color-bg-main: #ffffff;
+    --color-bg-light: #f4f7f6;
+    --color-border: #e0e0e0;
+    
+    /* Tipografía */
+    --font-primary: 'Outfit', sans-serif;
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* Sombras y Bordes */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+    --transition-slow: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================================================
+   Reseteo Básico
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Scroll fluido */
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-main);
+    background-color: var(--color-bg-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Tipografía Global
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-primary-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Layout y Utilidades
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.bg-light {
+    background-color: var(--color-bg-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Títulos de sección */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    display: inline-block;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+    border-radius: 2px;
+}
+
+.title-underline.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-description {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+}
+
+/* Badges / Etiquetas */
+.badge {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background-color: rgba(0, 107, 63, 0.1);
+    color: var(--color-primary);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+   Animaciones Generales
+   ========================================================================== */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
