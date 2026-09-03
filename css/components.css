@@ -216,7 +216,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../Recursos/hero_salazar.png');
+    background-image: url('../Recursos/hero-salazar.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */

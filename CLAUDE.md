@@ -34,9 +34,9 @@ css/components.css    10 bloques comentados: Botones, Navbar, Hero, Historia,
 js/main.js            Menú móvil, navbar con scroll, IntersectionObserver,
                       lightbox de galería, redirección al AR
 Recursos/             Imágenes, logos, targets, modelos 3D
-Recursos/TargetsAR/   4 JPG de los afiches + targets.mind compilado
-Recursos/Animaciones/ PlazaCentral.glb
-Recursos/Audios/      (a crear) voces de los personajes
+Recursos/targetsar/   4 JPG de los afiches + targets.mind compilado
+Recursos/animaciones/ plazacentral.glb
+Recursos/audios/      (a crear) voces de los personajes
 ```
 
 ### Convenciones importantes
@@ -47,14 +47,17 @@ Recursos/Audios/      (a crear) voces de los personajes
 - Los colores viven en variables CSS en `css/style.css`:
   `--color-primary: #006b3f` (verde institucional),
   `--color-accent: #e5b920` (dorado). Nunca hardcodear hex nuevos.
-- Hay rutas con **espacios y extensiones en mayúscula** (`Recursos/Galeria Visual/`,
-  `Naturaleza 1.JPG`). En servidor Linux distinguen mayúsculas: respetar exacto.
+- Todos los nombres de archivo y carpeta bajo `Recursos/` están normalizados a
+  minúsculas, sin tildes/ñ y con guiones en vez de espacios (ej.
+  `Recursos/galeria-visual/naturaleza-1.jpg`), porque GitHub Pages sirve desde
+  Linux y distingue mayúsculas. Si agregas un archivo nuevo, nómbralo ya en
+  ese formato — no reintroduzcas mayúsculas ni espacios.
 - La galería usa el atributo `data-images` con un array JSON; `main.js` lo parsea.
 
 ## Estado del contenido AR
 
 `targets.mind` está compilado con **4 targets** (verificado leyendo el binario:
-3 imágenes de 2560×2560 y una de 1254×1254, que corresponde a `TargetPatinaje.jpg`
+3 imágenes de 2560×2560 y una de 1254×1254, que corresponde a `targetpatinaje.jpg`
 en el índice 1).
 
 | targetIndex | Sitio | Estado |
@@ -65,10 +68,10 @@ en el índice 1).
 | 3 | Los 7 Chorros (¿?) | Cubo de relleno, etiqueta dudosa |
 
 El índice 3 estaba etiquetado como "Santuario Virgen de Belén" pero la cuarta imagen
-compilada es `Target7Chorros.jpg`. Sin confirmar. Se verifica abriendo
+compilada es `target7chorros.jpg`. Sin confirmar. Se verifica abriendo
 `ar.html?debug=1` y escaneando cada afiche: el panel muestra el índice detectado.
 
-### El modelo `PlazaCentral.glb`
+### El modelo `plazacentral.glb`
 
 - 30.4 MB, de los cuales **24.6 MB son texturas** (12.1 MB color base, 6.6 MB
   metallic/roughness, 5.3 MB normal). Exportado desde Blender.
@@ -79,7 +82,7 @@ compilada es `Target7Chorros.jpg`. Sin confirmar. Se verifica abriendo
 
 ## Tareas pendientes, por prioridad
 
-1. **Grabar la voz de la Plaza Central** → `Recursos/Audios/PlazaCentral.mp3`.
+1. **Grabar la voz de la Plaza Central** → `Recursos/audios/plazacentral.mp3`.
    Sin esto el personaje mueve la boca en silencio.
 2. **Comprimir el GLB.** 30 MB es inviable en datos móviles.
    `gltf-transform optimize in.glb out.glb --texture-size 1024 --texture-compress webp`
@@ -97,7 +100,7 @@ Cada experiencia se configura con atributos `data-*` en la entidad del target:
 ```html
 <a-entity mindar-image-target="targetIndex: 0" experiencia-ar
   data-nombre="Plaza Central"
-  data-audio="Recursos/Audios/PlazaCentral.mp3"
+  data-audio="Recursos/audios/plazacentral.mp3"
   data-subtitulos='[{"t":0,"texto":"..."},{"t":6.5,"texto":"..."}]'>
   <a-gltf-model src="#modeloPlaza" animation-mixer="clip: *; loop: once; timeScale: 0">
   </a-gltf-model>

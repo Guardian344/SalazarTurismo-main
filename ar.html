@@ -317,7 +317,7 @@
        look-controls desactivado: en MindAR la cámara debe quedar fija en el
        origen, si rota el modelo se despega del target. -->
   <a-scene
-    mindar-image="imageTargetSrc: Recursos/TargetsAR/targets.mind;
+    mindar-image="imageTargetSrc: Recursos/targetsar/targets.mind;
                   autoStart: false;
                   uiScanning: no;
                   uiLoading: no;
@@ -332,9 +332,9 @@
     device-orientation-permission-ui="enabled: false">
 
     <a-assets timeout="120000">
-      <a-asset-item id="modeloPlaza" src="Recursos/Animaciones/PlazaCentral.glb"></a-asset-item>
+      <a-asset-item id="modeloPlaza" src="Recursos/animaciones/plazacentral.glb"></a-asset-item>
       <!-- Cuando tengas los otros modelos, añádelos aquí:
-      <a-asset-item id="modeloPatinaje" src="Recursos/Animaciones/Patinaje.glb"></a-asset-item>
+      <a-asset-item id="modeloPatinaje" src="Recursos/animaciones/patinaje.glb"></a-asset-item>
       -->
     </a-assets>
 
@@ -354,7 +354,7 @@
     <!-- Target 0 -->
     <a-entity mindar-image-target="targetIndex: 0" experiencia-ar
       data-nombre="Plaza Central"
-      data-audio="Recursos/Audios/PlazaCentral.mp3"
+      data-audio="Recursos/audios/plazacentral.mp3"
       data-subtitulos='[]'>
       <a-gltf-model src="#modeloPlaza" position="0 -1 0" scale="2.5 2.5 2.5" rotation="0 0 0"
         animation-mixer="clip: *; loop: once; clampWhenFinished: true; timeScale: 0"></a-gltf-model>
@@ -656,7 +656,7 @@
       btnIniciar.style.display = 'none';
       document.querySelector('#inicio h2').textContent = 'No se pudo iniciar el escáner';
       document.querySelector('#inicio p').textContent =
-        'Comprueba tres cosas: que la página esté servida por HTTPS, que el navegador tenga permiso de cámara, y que exista el archivo Recursos/TargetsAR/targets.mind.';
+        'Comprueba tres cosas: que la página esté servida por HTTPS, que el navegador tenga permiso de cámara, y que exista el archivo Recursos/targetsar/targets.mind.';
       cargaTexto.textContent = '';
     });
 
