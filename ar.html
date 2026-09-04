@@ -341,9 +341,9 @@
 
     <a-assets timeout="120000">
       <a-asset-item id="modeloPlaza" src="Recursos/Animaciones/PlazaCentral.glb"></a-asset-item>
-      <!-- Cuando tengas los otros modelos, añádelos aquí:
-      <a-asset-item id="modeloPatinaje" src="Recursos/animaciones/patinaje.glb"></a-asset-item>
-      -->
+      <a-asset-item id="modeloPatinaje" src="Recursos/Animaciones/patinaje.glb"></a-asset-item>
+      <a-asset-item id="modeloIglesia" src="Recursos/Animaciones/iglesia.glb"></a-asset-item>
+      <a-asset-item id="modelo7Chorros" src="Recursos/Animaciones/7chorros.glb"></a-asset-item>
     </a-assets>
 
     <a-camera position="0 0 0" look-controls="enabled: false" wasd-controls="enabled: false"></a-camera>
@@ -368,22 +368,22 @@
         animation-mixer="clip: *; loop: once; clampWhenFinished: true; timeScale: 0"></a-gltf-model>
     </a-entity>
 
-    <!-- Target 1 — sustituye el a-box por tu modelo cuando lo tengas -->
+    <!-- Target 1 -->
     <a-entity mindar-image-target="targetIndex: 1" experiencia-ar
       data-nombre="Pista de Patinaje"
-      data-audio=""
+      data-audio="Recursos/audios/patinaje.mp3"
       data-subtitulos='[]'>
-      <a-box position="0 0 .1" depth=".5" height=".5" width=".5" color="#006b3f" opacity=".9"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear"></a-box>
+      <a-gltf-model src="#modeloPatinaje" position="0 -1 0" scale="2.5 2.5 2.5" rotation="0 0 0"
+        animation-mixer="clip: *; loop: once; clampWhenFinished: true; timeScale: 0"></a-gltf-model>
     </a-entity>
 
     <!-- Target 2 -->
     <a-entity mindar-image-target="targetIndex: 2" experiencia-ar
       data-nombre="Iglesia de San Pablo"
-      data-audio=""
+      data-audio="Recursos/audios/iglesia.mp3"
       data-subtitulos='[]'>
-      <a-box position="0 0 .1" depth=".5" height=".5" width=".5" color="#e5b920" opacity=".9"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear"></a-box>
+      <a-gltf-model src="#modeloIglesia" position="0 -1 0" scale="2.5 2.5 2.5" rotation="0 0 0"
+        animation-mixer="clip: *; loop: once; clampWhenFinished: true; timeScale: 0"></a-gltf-model>
     </a-entity>
 
     <!-- Target 3 — el .mind trae 4 imágenes y la cuarta es Target7Chorros.jpg,
@@ -391,10 +391,10 @@
          esta etiqueta. -->
     <a-entity mindar-image-target="targetIndex: 3" experiencia-ar
       data-nombre="Los 7 Chorros"
-      data-audio=""
+      data-audio="Recursos/audios/7chorros.mp3"
       data-subtitulos='[]'>
-      <a-box position="0 0 .1" depth=".5" height=".5" width=".5" color="#ffffff" opacity=".9"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear"></a-box>
+      <a-gltf-model src="#modelo7Chorros" position="0 -1 0" scale="2.5 2.5 2.5" rotation="0 0 0"
+        animation-mixer="clip: *; loop: once; clampWhenFinished: true; timeScale: 0"></a-gltf-model>
     </a-entity>
 
   </a-scene>
