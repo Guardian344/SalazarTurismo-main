@@ -643,6 +643,11 @@
         const sistema = escena.systems['mindar-image-system'];
         await sistema.start();
         pantalla.style.display = 'none';
+        // MindAR mide el video antes de que el layout se asiente y lo deja
+        // en un recuadro pequeño; un resize tras el siguiente frame lo recalcula.
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          window.dispatchEvent(new Event('resize'));
+        }));
       } catch (err) {
         console.error(err);
         btnIniciar.disabled = false;
