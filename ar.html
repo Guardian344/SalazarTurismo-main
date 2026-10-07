@@ -527,10 +527,28 @@
       /* Arranca la animación desde el frame 0, en sincronía con la voz */
       reproducirAnimacion: function () {
         if (!this.modelo) return;
-        const mixer = this.modelo.components['animation-mixer'];
-        if (!mixer || !mixer.mixer) return;
-        mixer.mixer.setTime(0);
+        this.reiniciarAcciones(1);
         this.modelo.setAttribute('animation-mixer', 'timeScale', 1);
+      },
+
+      /* Con loop: once + clampWhenFinished, three.js deja la acción en
+         paused = true al terminar el clip, y mixer.setTime(0) no la reactiva.
+         Aquí cada acción se reinicia de verdad para poder volver a arrancarla. */
+      reiniciarAcciones: function (timeScale) {
+        if (!this.modelo) return;
+        const comp = this.modelo.components['animation-mixer'];
+        if (!comp || !comp.mixer) return;
+        let acciones = comp.activeActions || [];
+        if (!acciones.length) acciones = comp.mixer._actions || [];
+        acciones.forEach(action => {
+          action.reset();
+          action.enabled = true;
+          action.paused = false;
+          action.time = 0;
+          action.setEffectiveTimeScale(timeScale);
+          action.play();
+        });
+        comp.mixer.update(0);
       },
 
       pausarAnimacion: function () {
@@ -574,10 +592,7 @@
         this.indiceSubtitulo = -1;
         this.el.object3D.visible = false;
         this.pausarAnimacion();
-        if (this.modelo) {
-          const mixer = this.modelo.components['animation-mixer'];
-          if (mixer && mixer.mixer) mixer.mixer.setTime(0);
-        }
+        this.reiniciarAcciones(0);
         if (this.audio) { this.audio.pause(); this.audio.currentTime = 0; }
       },
 
