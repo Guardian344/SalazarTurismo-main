@@ -160,4 +160,85 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ==========================================================================
+       6. Ventana de presentación de Anteo
+       La ventana se genera aquí una sola vez para no duplicar el texto en las
+       4 páginas (el navbar ya está duplicado a mano; esto no hace falta).
+       ========================================================================== */
+    const openAnteoBtn = document.getElementById('openAnteoBtn');
+
+    if (openAnteoBtn) {
+        const anteoModal = document.createElement('div');
+        anteoModal.className = 'anteo-modal';
+        anteoModal.id = 'anteoModal';
+        anteoModal.setAttribute('aria-hidden', 'true');
+        anteoModal.innerHTML = `
+            <div class="anteo-dialog" role="dialog" aria-modal="true" aria-labelledby="anteoTitle">
+                <button type="button" class="anteo-close" id="anteoClose" aria-label="Cerrar">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <div class="anteo-body">
+                    <div class="anteo-text">
+                        <h2 class="anteo-title" id="anteoTitle">Hola, soy Anteo</h2>
+                        <p>Soy el oso de anteojos que vive en las montañas de Salazar de las Palmas.</p>
+                        <p>Los de mi especie somos los únicos osos de Suramérica, y estos cerros andinos
+                        son nuestra casa desde mucho antes de que existiera el pueblo. Desde allá
+                        arriba he visto pasar los siglos sobre Salazar, fundado en 1583 y tercero más
+                        antiguo de Norte de Santander.</p>
+                        <p>Un día bajé con mi morral y mi bastón, porque alguien tenía que contarle a los
+                        visitantes lo que guardan estas calles.</p>
+                        <p>Apunta la cámara a cualquiera de los afiches del pueblo y apareceré para
+                        contarte la historia del lugar donde estés: la devoción a la Virgen de Belén,
+                        el agua de Los 7 Chorros, las paredes del Templo de San Pablo.</p>
+                        <p>Bienvenido a mi casa.</p>
+                    </div>
+                    <div class="anteo-figure">
+                        <img src="Recursos/anteo.png" class="anteo-image" loading="lazy"
+                            alt="Anteo, un oso de anteojos con traje de explorador, morral y bastón">
+                    </div>
+                </div>
+            </div>`;
+        document.body.appendChild(anteoModal);
+
+        const anteoClose = anteoModal.querySelector('#anteoClose');
+
+        const openAnteo = () => {
+            // En celular, cerrar el menú hamburguesa antes de abrir la ventana
+            if (navLinks && navLinks.classList.contains('active')) {
+                menuToggle.click();
+            }
+            anteoModal.classList.add('active');
+            anteoModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            anteoClose.focus();
+        };
+
+        const closeAnteo = () => {
+            if (!anteoModal.classList.contains('active')) return;
+            anteoModal.classList.remove('active');
+            anteoModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            openAnteoBtn.focus();
+        };
+
+        openAnteoBtn.addEventListener('click', openAnteo);
+        anteoClose.addEventListener('click', closeAnteo);
+
+        // Cerrar al hacer clic en el fondo oscurecido
+        anteoModal.addEventListener('click', (e) => {
+            if (e.target === anteoModal) closeAnteo();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!anteoModal.classList.contains('active')) return;
+            if (e.key === 'Escape') {
+                closeAnteo();
+            } else if (e.key === 'Tab') {
+                // El único elemento enfocable es la X: mantener el foco dentro
+                e.preventDefault();
+                anteoClose.focus();
+            }
+        });
+    }
+
 });
